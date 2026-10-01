@@ -1,5 +1,6 @@
 import streamlit as st
 
+from scoring.ai_writer import generateEmailDraft
 from scoring.data import REFERENCE_DATE, loadPipeline, splitClosedAndOpenDeals
 from scoring.explanations import formatMoney
 from scoring.priority import prioritize
@@ -113,7 +114,13 @@ def renderDealDetails(deal):
     for reason in deal["reasons"]:
         st.markdown(f"- {reason}")
     st.caption(f"Próxima ação sugerida: {deal['next_action']}")
-
+    
+    st.markdown("---")
+    
+    if st.button("✨ Rascunhar e-mail com IA", key=f"btn_{deal['opportunity_id']}"):
+        with st.spinner("Analisando contexto e gerando rascunho inteligente..."):
+            draft = generateEmailDraft(deal)
+            st.text_area("Rascunho gerado:", value=draft, height=250)
 
 def renderQueue(deals, queue, key):
     queueDeals = dealsInQueue(deals, queue).sort_values("score", ascending=False)
