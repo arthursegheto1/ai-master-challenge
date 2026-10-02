@@ -1,20 +1,20 @@
 # Process log: Challenge 003 (Lead Scorer)
 
-Registro de como usei IA para chegar na solução. Os trechos marcados com [PREENCHER] dependem de informações que só eu tenho.
+Registro de como usei IA para chegar na solução.
 
 ## 1. Ferramentas e por quê
 
 | Ferramenta | Uso |
 |---|---|
 | Claude (Anthropic, claude.ai) | Escolha do desafio, exploração dos dados executando código nos CSVs, desenho do scoring, geração e teste do código em fases, reprodução e crítica do meu backtest, revisão do módulo de e-mail, rascunho da documentação |
-| Gemini (Google) | Segunda opinião: revisão crítica da estratégia e do código, versão inicial do módulo de e-mail com IA, [PREENCHER outros usos] |
+| Gemini (Google) | Segunda opinião: revisão crítica da estratégia e do código, versão inicial do módulo de e-mail com IA, |
 | PowerShell, Git, VS Code, pytest, Streamlit | Execução, versionamento e verificação de cada etapa no meu ambiente (Windows) |
 
 Usei duas IAs de propósito: uma para construir e testar com execução de código, outra para questionar o que foi construído. Os pontos em que as duas divergiram ou em que eu discordei de uma delas estão na seção 3.
 
 ## 2. Como decompus o problema antes de promptar
 
-1. **Escolha do desafio.** Comparei os quatro desafios com a minha stack (Python, SQL, React, Docker) e com o formato da vaga. Escolhi o 003 porque o entregável é software funcionando e o enunciado aceita qualquer stack. O README do desafio só foi lido depois de eu colá-lo na conversa, porque o assistente não conseguiu abrir o GitHub.
+1. **Escolha do desafio.** Comparei os quatro desafios com a minha stack (Python, SQL, React, Docker) e com o formato da vaga. Escolhi o 003 porque o entregável é software funcionando e o enunciado aceita qualquer stack.
 2. **Entender os dados antes de modelar.** Pedi a análise das quatro tabelas: nulos por estágio, divergências de nomes, durações dos ciclos e taxa de vitória por vendedor, produto, setor e região. Daí saíram os achados que definiram o projeto: 68% dos deals abertos sem conta, ciclo máximo de 138 dias contra deals abertos com mais de 400, e nenhuma variável com sinal estatístico (AUC 0,50 num split temporal).
 3. **Decidir o tipo de solução.** Com a falta de sinal, descartei ML e adotei regras explicáveis, que é o que o enunciado de qualquer forma valoriza.
 4. **Dividir em fases**: dados, motor de scoring, validação, interface, recurso de IA, empacotamento e documentação. Cada fase foi aplicada e testada localmente antes da seguinte.
@@ -41,7 +41,6 @@ Usei duas IAs de propósito: uma para construir e testar com execução de códi
 - **Rodar a validação por conta própria** e depois aceitar que a minha interpretação estava errada e que um resultado nulo bem reportado vale mais do que um ganho que não se sustenta.
 - **Verificação no ambiente real:** terminal do Windows, Git com o `.gitignore` da raiz, testes e app rodando na minha máquina.
 - **A ideia do recurso de e-mail com IA**, para mostrar IA generativa embutida no fluxo do vendedor, mantido opcional e sinalizado quando cai no texto fixo.
-- [PREENCHER: qualquer outra decisão ou insight próprio]
 
 ## 5. Iterações
 
@@ -50,10 +49,9 @@ Usei duas IAs de propósito: uma para construir e testar com execução de códi
 - **Interface:** 1 versão principal e ajustes em cima de testes automatizados.
 - **Recurso de e-mail:** versão inicial com o Gemini e uma reescrita após revisão.
 - **Testes:** de 4 testes (módulo de dados) até a suíte final com 60 testes, incluindo testes headless do Streamlit.
-- **Tempo total:** [PREENCHER]. O desafio recomenda 4 a 6 horas; a solução passou disso e o motivo está na quantidade de ciclos de revisão e de validação.
+- **Tempo total:**. O desafio recomenda 4 a 6 horas; a solução passou disso e o motivo está na quantidade de ciclos de revisão e de validação.
 
 ## 6. Evidências
 
 - Histórico do git na branch `submission/arthur-segheto`, com commits por fase.
-- Exports das conversas: `chat-exports/` [PREENCHER com Claude e Gemini].
-- Screenshots do app, dos testes e do backtest: `screenshots/` [PREENCHER].
+- Screenshots do app, dos testes e do backtest: `screenshots/`.

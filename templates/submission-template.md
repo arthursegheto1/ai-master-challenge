@@ -1,97 +1,26 @@
-# Submissão — [Seu Nome] — Challenge [XXX]
+# Submissão: Arthur Segheto, Challenge 003 (Lead Scorer)
 
 ## Sobre mim
 
-- **Nome:**
-- **LinkedIn:**
-- **Challenge escolhido:**
-
----
+- **Nome:** Arthur Segheto
+- **LinkedIn:** linkedin.com/in/arthur-segheto-554497248 
+- **Challenge escolhido:** 003, Lead Scorer (Vendas/RevOps)
 
 ## Executive Summary
 
-_Em 3-5 frases: o que você fez, o que encontrou, e qual a principal recomendação._
-
-
-
----
+Construí uma ferramenta em Streamlit que separa os 2.089 deals abertos do CRM em três filas (trabalhar agora, qualificar, requalificar ou encerrar), dá a cada deal um score de 0 a 100 e explica em linguagem de vendedor por que ele está naquela posição. O achado principal é que o pipeline está inflado: com o ciclo típico em 115 dias, 1.400 dos 1.589 deals em negociação (88%) já passaram do prazo e concentram 69% do valor de catálogo do pipeline. Os dados não permitem prever quem vai fechar: nenhuma variável tem sinal estatístico, e em um backtest temporal sem vazamento o score não superou a ordenação por preço (capturou menos receita nos três cortes testados). A recomendação é usar a ferramenta como triagem e higiene de pipeline, e não como previsor de fechamento.
 
 ## Solução
 
-_Sua análise, protótipo, redesign ou o que o challenge pedir. Use o formato que melhor comunicar._
+**O que roda:** aplicação Streamlit (`solution/app.py`) com filtros em cascata (região, manager, vendedor), KPIs, uma visão de vendedor com as três filas e a explicação de cada deal, uma visão gerencial de deals parados ("zumbis") e um botão que rascunha um e-mail de follow-up com o Gemini (opcional).
 
-### Abordagem
+### Setup
 
-_Como você atacou o problema. Por onde começou? Como decompôs? O que priorizou?_
+Requisitos: Python 3.13 e os dados já incluídos em `solution/data/` (dataset CRM Sales Predictive Analytics, CC0).
 
-
-
-### Resultados / Findings
-
-_O que você encontrou/construiu. Mostre dados, screenshots, links._
-
-
-
-### Recomendações
-
-_O que a empresa deveria fazer com base nos seus findings. Priorize._
-
-
-
-### Limitações
-
-_O que você não conseguiu resolver, verificar, ou que precisaria de mais tempo/dados._
-
-
-
----
-
-## Process Log — Como usei IA
-
-> **Este bloco é obrigatório.** Sem ele, a submissão é desclassificada.
-
-### Ferramentas usadas
-
-_Liste as ferramentas de IA que usou e para quê._
-
-| Ferramenta | Para que usou |
-|------------|--------------|
-| _ex: Claude Code_ | _Análise exploratória dos dados e geração de gráficos_ |
-| _ex: Cursor_ | _Construção do protótipo web_ |
-| _ex: ChatGPT_ | _Brainstorm de hipóteses iniciais_ |
-
-### Workflow
-
-_Descreva passo a passo como você trabalhou. Onde a IA entrou em cada etapa?_
-
-1.
-2.
-3.
-
-### Onde a IA errou e como corrigi
-
-_A IA fez algo errado? Você percebeu? Como corrigiu?_
-
-
-
-### O que eu adicionei que a IA sozinha não faria
-
-_Qual foi seu julgamento, contexto, ou insight que fez diferença?_
-
-
-
----
-
-## Evidências
-
-_Anexe ou linke as evidências do processo:_
-
-- [ ] Screenshots das conversas com IA
-- [ ] Screen recording do workflow
-- [ ] Chat exports
-- [ ] Git history (se construiu código)
-- [ ] Outro: _____________
-
----
-
-_Submissão enviada em: [data]_
+```powershell
+cd submissions/arthur-segheto/solution
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+streamlit run app.py

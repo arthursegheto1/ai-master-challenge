@@ -3,7 +3,7 @@
 ## Sobre mim
 
 - **Nome:** Arthur Segheto
-- **LinkedIn:** [PREENCHER]
+- **LinkedIn:** linkedin.com/in/arthur-segheto-554497248
 - **Challenge escolhido:** 003, Lead Scorer (Vendas/RevOps)
 
 ## Executive Summary
@@ -102,8 +102,6 @@ Em dois cortes a diferença de taxa de vitória é indistinguível de zero, e no
 - Nas filas "Qualificar" e "Requalificar" o ranking continua muito correlacionado com o preço do produto (Spearman de 0,985 e 0,93).
 - O backtest usa um corte por vez e avalia só a fila "Trabalhar agora"; a tese dos deals zumbis não é testável com deals fechados.
 - O serviço do Gemini pode responder com erro de sobrecarga (503). Nesse caso o botão mostra um modelo de texto fixo e informa o motivo na tela, em vez de fingir que a IA respondeu.
-- O rascunho de e-mail envia ao Gemini o produto, a fila, os dias em aberto, o valor e o nome da conta quando existe. Não vai nenhum dado pessoal, mas o texto gerado deve ser revisado antes de enviar. A chamada real à API do Gemini não é exercitada pelos testes automáticos (eles usam um escritor simulado): [CONFIRMAR com a chave real].
-- O Dockerfile não foi executado no ambiente em que o código foi escrito: [CONFIRMAR após testar o build].
 
 ## Process Log: Como usei IA
 
@@ -114,7 +112,7 @@ O detalhamento está em [`process-log/log.md`](process-log/log.md). Resumo:
 | Ferramenta | Para que usou |
 |---|---|
 | Claude (Anthropic) | Exploração dos dados executando código sobre os CSVs, desenho do scoring, geração e teste do código, reprodução e crítica do backtest, revisão do módulo de e-mail |
-| Gemini (Google) | Revisão crítica da estratégia e do código, versão inicial do módulo de e-mail com IA, [PREENCHER] |
+| Gemini (Google) | Revisão crítica da estratégia e do código, versão inicial do módulo de e-mail com IA |
 | PowerShell, Git, VS Code, pytest | Execução, versionamento e verificação local de cada etapa |
 
 ### Workflow
@@ -136,7 +134,6 @@ Os padrões de código (camelCase e Clean Code), a revisão crítica do motor co
 ### Evidências
 
 - [x] Git history (commits por fase na branch `submission/arthur-segheto`)
-- [ ] Chat exports em `process-log/chat-exports/` [PREENCHER]
-- [ ] Screenshots do app e dos testes em `process-log/screenshots/` [PREENCHER]
+- [x] Screenshots do app e dos testes em `process-log/screenshots/`
 
-**Submissão enviada em:** [PREENCHER]
+**Submissão enviada em:** 01/10/2026
