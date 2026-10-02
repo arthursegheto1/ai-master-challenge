@@ -134,6 +134,6 @@ Os padrões de código (camelCase e Clean Code), a revisão crítica do motor co
 ### Evidências
 
 - [x] Git history (commits por fase na branch `submission/arthur-segheto`)
-- [x] Screenshots do app e dos testes em `process-log/screenshots/`
+- [x] Screenshots do app, dos testes e das interações com a IA em `process-log/screenshots/`
 
 **Submissão enviada em:** 01/10/2026

@@ -31,7 +31,7 @@ Usei duas IAs de propósito: uma para construir e testar com execução de códi
 | Código em snake_case e com funções longas, contra o meu padrão | Revisão minha | Reescrita em camelCase, funções pequenas, constantes nomeadas |
 | Limite de ciclo pelo máximo (frágil a outliers), ajuste da chance pela taxa do vendedor (viés conceitual: punir júnior) e ranking que virava só preço nas filas sem urgência | Minha revisão crítica, junto com o Gemini | Percentil 95, remoção do ajuste por vendedor, decaimento de tempo na fila de requalificar e bônus por receita da conta na fila de qualificar. O assistente discordou em parte (o decaimento é premissa, não achado; a receita não tem sinal) e isso foi documentado |
 | Minha leitura do backtest: "ganho real de 2,3 p.p. de eficiência" | O assistente reproduziu o método e calculou o intervalo de confiança: de -5,0 a +4,7 p.p., ou seja, ruído | Backtest refeito com corte temporal sem vazamento, três cortes e intervalo de confiança. Resultado: o score não supera o preço. Documentado como resultado nulo |
-| Módulo de e-mail com IA: SDK `google-generativeai` descontinuado, falha escondida atrás de um modelo fixo apresentado como IA, assinatura com o meu nome fixa no código e rascunho que sumia ao editar [CONFIRMAR cada ponto no seu código] | Revisão do código colado na conversa e checagem da documentação do Gemini | Reescrita com o SDK `google-genai`, aviso na tela quando não usa IA, assinatura pelo vendedor do deal e rascunho preservado entre interações |
+| Módulo de e-mail com IA: SDK `google-generativeai` descontinuado, falha escondida atrás de um modelo fixo apresentado como IA, assinatura com o meu nome fixa no código e rascunho que sumia ao editar | Revisão do código colado na conversa e checagem da documentação do Gemini | Reescrita com o SDK `google-genai`, aviso na tela quando não usa IA, assinatura pelo vendedor do deal e rascunho preservado entre interações |
 
 ## 4. O que eu adicionei que a IA sozinha não faria
 
@@ -49,9 +49,9 @@ Usei duas IAs de propósito: uma para construir e testar com execução de códi
 - **Interface:** 1 versão principal e ajustes em cima de testes automatizados.
 - **Recurso de e-mail:** versão inicial com o Gemini e uma reescrita após revisão.
 - **Testes:** de 4 testes (módulo de dados) até a suíte final com 60 testes, incluindo testes headless do Streamlit.
-- **Tempo total:**. O desafio recomenda 4 a 6 horas; a solução passou disso e o motivo está na quantidade de ciclos de revisão e de validação.
+- **Tempo total:** O desafio recomenda 4 a 6 horas; a solução passou disso e o motivo está na quantidade de ciclos de revisão e de validação.
 
 ## 6. Evidências
 
 - Histórico do git na branch `submission/arthur-segheto`, com commits por fase.
-- Screenshots do app, dos testes e do backtest: `screenshots/`.
+- Screenshots do app, dos testes, do backtest e interações com IA: `screenshots/`.
